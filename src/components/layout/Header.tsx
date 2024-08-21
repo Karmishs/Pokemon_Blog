@@ -24,14 +24,14 @@ const Header: React.FC = () => {
               Home
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link 
               to="/search" 
               className={tabActive === '/search' ? 'active' : ''}
             >
               Search
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link 
               to="/pokemon" 

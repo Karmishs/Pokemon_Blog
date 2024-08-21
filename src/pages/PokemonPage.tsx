@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { PokemonDetails } from '../interfaces/pokemonDetail.interface';
+import { IPokemonCard } from '../interfaces/pokemonCard.interface';
 import { fetchPokemonDetails } from '../api/pokemonApi';
 import { useParams } from 'react-router-dom';
 
 const PokemonDetail: React.FC = () => {
   const { name } = useParams<{ name: string }>();
-  const [pokemon, setPokemon] = useState<PokemonDetails | null>(null);
+  const [pokemon, setPokemon] = useState<IPokemonCard | null>(null);
 
   useEffect(() => {
     const loadPokemonDetails = async () => {

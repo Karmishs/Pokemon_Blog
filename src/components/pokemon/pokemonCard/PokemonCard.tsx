@@ -1,12 +1,13 @@
 import React from 'react';
-import { PokemonDetails } from '../../../interfaces/pokemonDetail.interface';
+import { IPokemonCard } from '../../../interfaces/pokemonCard.interface';
+import './PokemonCard.css';
 
 interface PokemonCardProps {
-  pokemon: PokemonDetails;
+  pokemon: IPokemonCard;
 }
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
-  const imageUrl = pokemon.sprites?.front_default || 'fallback-image-url';
+  const imageUrl = pokemon.sprites.other.home.front_default || 'fallback-image-url';
 
   return (
     <div className="pokemon-card">

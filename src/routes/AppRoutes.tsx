@@ -4,7 +4,7 @@ import HomePage from '../pages/HomePage';
 import PokemonDetail from '../pages/PokemonPage';
 import PokemonList from '../components/pokemon/pokemonList/PokemonList';
 import Header from '../components/layout/Header';
-import Search from '../components/search/search';
+import SearchWithName from '../components/searchWithName/SearchWithName';
 
 const AppRoutes: React.FC = () => {
   return (
@@ -12,8 +12,15 @@ const AppRoutes: React.FC = () => {
         <Header />
         <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/pokemon" element={<PokemonList />} />
-            <Route path="/search" element={<Search />} />
+            <Route
+              path="/pokemon"
+              element={
+                <>
+                  <SearchWithName />
+                  <PokemonList />
+                </>
+              }
+            />
             <Route path="/pokemon/:name" element={<PokemonDetail />} />
         </Routes>
     </Router>
