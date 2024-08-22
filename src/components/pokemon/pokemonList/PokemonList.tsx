@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useInfiniteQuery } from 'react-query';
-import { fetchPokemonListWithPagination, fetchPokemonDetails } from '../../../api/pokemonApi'; 
+import { fetchPokemonListWithPagination } from '../../../api/pokemonApi'; 
 import { IPokemon } from '../../../interfaces/pokemon.interface';
-import { IPokemonCard } from '../../../interfaces/pokemonCard.interface';
 import PokemonCard from '../pokemonCard/PokemonCard';
 import './PokemonList.css';
 
 const PokemonList: React.FC = () => {
-  const [detailedPokemonList, setDetailedPokemonList] = useState<IPokemonCard[]>([]);
-
   const {
     data,
     fetchNextPage, 
@@ -46,21 +43,6 @@ const PokemonList: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isFetchingNextPage, hasNextPage, fetchNextPage]);
 
-  useEffect(() => {
-    const fetchDetailedPokemon = async () => {
-      if (data) {
-        const allPokemon = data.pages.flat();
-        const detailedPokemonPromises = allPokemon.map((pokemon: IPokemon) =>
-          fetchPokemonDetails(pokemon.name)
-        );
-        const detailedPokemon = await Promise.all(detailedPokemonPromises);
-        setDetailedPokemonList(detailedPokemon);
-      }
-    };
-
-    fetchDetailedPokemon();
-  }, [data]);
-
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -72,8 +54,11 @@ const PokemonList: React.FC = () => {
 
   return (
     <div className="pokemon-list">
-      {detailedPokemonList.map((pokemon: IPokemonCard) => (
-        <PokemonCard key={pokemon.id} pokemon={pokemon} />
+      {data?.pages.flat().map((pokemon: IPokemon) => (
+        <div className='test'>
+          <PokemonCard key={pokemon.name} pokemon={pokemon} />
+        </div>
+        
       ))}
       {isFetchingNextPage && <div>Loading more Pokemon...</div>}
       {!hasNextPage && <div>No more Pokemon to load.</div>}
