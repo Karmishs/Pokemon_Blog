@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { IPokemonCard } from '../interfaces/pokemonCard.interface';
+import { IPokemonCard } from '../interfaces/pokemon.interface';
 import { fetchPokemonDetails } from '../api/pokemonApi';
 import { useParams } from 'react-router-dom';
 

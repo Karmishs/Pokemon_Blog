@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useQuery } from 'react-query';
 import { fetchAllPokemonList, fetchPokemonDetailsByUrl } from '../../api/pokemonApi';
-import { IPokemonCard } from '../../interfaces/pokemonCard.interface';
+import { IPokemonCard } from '../../interfaces/pokemon.interface';
 import './SearchWithName.css';
 
 const SearchWithName: React.FC = () => {

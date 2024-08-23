@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { fetchPokemonDetailsByUrl } from '../../../api/pokemonApi';
-import { IPokemon } from '../../../interfaces/pokemon.interface';
-import { IPokemonCard } from '../../../interfaces/pokemonCard.interface';
+import { IPokemon, IPokemonCard } from '../../../interfaces/pokemon.interface';
 import './PokemonCard.css';
+import '../pokemonType/PokemonType.css';
+import PokemonType from '../pokemonType/PokemonType';
 
 interface PokemonCardProps {
   pokemon: IPokemon;
@@ -31,15 +32,15 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
 
   return (
     <div className="pokemon-card">
-      <div className='img-div'>
-        <img src={imageUrl} alt={pokemon.name} />
+      <div className="img-div">
+        <img className= "pokemon-card-image" src={imageUrl} alt={pokemon.name} />
       </div>
-      <div className='text'>
-        <span>{pokemon.name}</span>
+      <div className="pokemon-info">
+        <span className="pokemon-name">{pokemon.name}</span>
+        <div className="pokemon-types">
+          <PokemonType pokemonTypes={pokemonDetails?.types || []} />
+        </div>
       </div>
-    
-
-        
     </div>
   );
 };

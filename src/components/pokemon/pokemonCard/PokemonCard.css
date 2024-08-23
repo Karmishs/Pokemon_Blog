@@ -2,9 +2,8 @@
   position: relative;
   width: 416px;
   height: 383px;
-  margin: 50px; /* Khoảng cách giữa các thẻ */
+  margin: 50px;
   padding: 128px 42px 42px;
-
   text-align: center;
   background-image: url('/public/half-pokeball.svg');
   background-color: #a13c3c;
@@ -14,17 +13,14 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-
-  flex-basis: calc(100% / 4 - 20px); /* Chia đều cho 3 phần tử trừ khoảng cách */
-  margin: 10px; /* Khoảng cách giữa các thẻ */
+  flex-basis: calc(100% / 4 - 20px); /* Chia đều cho các phần tử */
 }
 
 .pokemon-card:hover {
   transform: translateY(-10px);
 }
 
-
-.pokemon-card img  {
+.pokemon-card-image {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -34,39 +30,38 @@
   z-index: 1;
 }
 
-.text {
-  top: 160px;
-  position:relative;
+.pokemon-info {
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.pokemon-name {
+  position: relative;
   font-size: 3.2rem;
   text-align: center;
   text-transform: capitalize;
   color: #fff;
-  &::before {
-    position: absolute;
-    top: 50%;
-    left: 50px;
-    transform: translateY(-50%);
-    content: " ";
-    height: 12px;
-    width: 12px;
-    border-radius: 24px;
-    background: #fff;
-  }
-  &::after {
-    position: absolute;
-    top: 50%;
-    right: 50px;
-    transform: translateY(-50%);
-    content: " ";
-    height: 12px;
-    width: 12px;
-    border-radius: 24px;
-    background: #fff;
-  }
 }
 
-
-.pokemon-card:hover {
-  transform: translateY(-10px); /* Hiệu ứng khi di chuột qua */
+.pokemon-name::before, .pokemon-name::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: " ";
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: #fff;
 }
 
+.pokemon-name::before {
+  left: -30px;
+}
+
+.pokemon-name::after {
+  right: -30px;
+}

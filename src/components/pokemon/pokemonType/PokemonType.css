@@ -1,0 +1,53 @@
+.pokemon-types {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem; /* Khoảng cách giữa các loại */
+    white-space: nowrap; /* Ngăn không cho text xuống dòng */
+  }
+  
+.pokemon-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px;
+    width: 120px;
+    margin: 0 12px;
+    border-radius: 8px;
+    color: #fff;
+}
+  
+.pokemon-type img {
+    width: 20px;
+    height: auto;
+    display: inline-block;
+    /* vertical-align: middle; */
+    position: static;
+}
+  
+  
+  
+.normal { background-color: #ffcc99; }
+.fighting { background-color: #ff3333; }
+.flying { background-color: #6699ff; }
+.poison { background-color: #aa66cc; }
+.ground { background-color: #ffcc66; }
+.rock { background-color: #cc9966; }
+.bug { background-color: #99cc33; }
+.ghost { background-color: #6666cc; }
+.steel { background-color: #cccccc; }
+.fire { background-color: #ff6633; }
+.water { background-color: #3399ff; }
+.grass { background-color: #66cc33; }
+.electric { background-color: #ffcc33; }
+.psychic { background-color: #ff6699; }
+.ice { background-color: #99ffff; }
+.dragon { background-color: #7038f8; }
+.dark { background-color: #333333; }
+.fairy { background-color: #ff99cc; }
+.unknown { background-color: #999999; }
+.shadow { background-color: #6666cc; }
+  

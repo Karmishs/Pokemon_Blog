@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { IPokemon } from '../interfaces/pokemon.interface';
-import { IPokemonCard } from '../interfaces/pokemonCard.interface';
+import { IPokemonCard } from '../interfaces/pokemon.interface';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
