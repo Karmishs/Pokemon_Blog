@@ -1,8 +1,9 @@
 .pokemon-types {
     display: flex;
     align-items: center;
-    gap: 0.25rem; /* Khoảng cách giữa các loại */
-    white-space: nowrap; /* Ngăn không cho text xuống dòng */
+    gap: 0.25rem;
+    white-space: nowrap;
+    padding: 4px 0px;
   }
   
 .pokemon-type {
@@ -10,7 +11,7 @@
     align-items: center;
     justify-content: center;
     gap: 6px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
     padding: 5px;

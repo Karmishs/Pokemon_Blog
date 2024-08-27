@@ -55,7 +55,7 @@ const PokemonList: React.FC = () => {
   return (
     <div className="pokemon-list">
       {data?.pages.flat().map((pokemon: IPokemon) => (
-        <div className='test'>
+        <div className='pokemon-card-list'>
           <PokemonCard key={pokemon.name} pokemon={pokemon} />
         </div>
         

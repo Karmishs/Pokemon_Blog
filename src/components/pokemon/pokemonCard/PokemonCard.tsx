@@ -1,12 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion } from 'framer-motion';  // Import Framer Motion
+import { motion } from 'framer-motion';
 import { fetchPokemonDetailsByUrl } from '../../../api/pokemonApi';
 import { IPokemon, IPokemonCard } from '../../../interfaces/pokemon.interface';
 import './PokemonCard.css';
 import '../pokemonType/PokemonType.css';
-import '../pokemonInfo/PokemonStat.css';
+import '../pokemonStat/PokemonStat.css';
 import PokemonType from '../pokemonType/PokemonType';
-import PokemonStat from '../pokemonInfo/PokemonStat';
+import PokemonStat from '../pokemonStat/PokemonStat';
 import { pokemonData } from "../../../helpers/PokemonTypes";
 
 interface PokemonCardProps {
@@ -56,10 +56,10 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
     <motion.div 
       ref={cardRef}
       className="pokemon-card"
-      initial={{ opacity: 0, y: 50 }}  // Bắt đầu với opacity 0 và dịch xuống
-      whileInView={{ opacity: 1, y: 0 }}  // Khi cuộn vào view, trở lại vị trí ban đầu và opacity 1
-      transition={{ duration: 0.5, ease: 'easeOut' }}  // Hiệu ứng chuyển động
-      viewport={{ once: true }}  // Hiệu ứng chỉ xảy ra một lần khi card vào view
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      viewport={{ once: false }}  // Hiệu ứng chỉ xảy ra một lần khi card vào view
     >
       <div className="img-div">
         <img className="pokemon-card-image" src={imageUrl} alt={pokemon.name} />
