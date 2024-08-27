@@ -13,6 +13,6 @@ code {
 }
 
 .app-background {
-  background-color: #f0f0f0; /* You can replace this with any color you prefer */
-  min-height: 100vh; /* Ensure the background color covers the entire viewport */
+  background-color: #0e0e0e;
+  min-height: 100vh; 
 }

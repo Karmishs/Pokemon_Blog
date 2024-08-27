@@ -17,7 +17,7 @@ export const fetchPokemonDetailsByUrl = async (url: string): Promise<IPokemonCar
   return response.data;
 }
 export const fetchPokemonListWithPagination = async (page: number): Promise<IPokemon[]> => {
-  const limit = 1;
+  const limit = 9;
   const offset = (page - 1) * limit;
   const response = await fetch(`${BASE_URL}/pokemon?limit=${limit}&offset=${offset}`);
   const data = await response.json();

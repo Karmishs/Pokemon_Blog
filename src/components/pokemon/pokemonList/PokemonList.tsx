@@ -60,8 +60,6 @@ const PokemonList: React.FC = () => {
         </div>
         
       ))}
-      {isFetchingNextPage && <div>Loading more Pokemon...</div>}
-      {!hasNextPage && <div>No more Pokemon to load.</div>}
     </div>
   );
 };
