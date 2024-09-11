@@ -28,8 +28,8 @@
   left: 50%;
   transform: translate(-50%, -110%);
   filter: saturate(1.9);
-  width: 280px;  /* Đặt chiều rộng cố định */
-  height: 280px; /* Đặt chiều cao cố định */
+  width: 280px;
+  height: 280px;
   z-index: 100;
 }
 
